@@ -1,0 +1,20 @@
+CompileFlags:
+  BuiltinHeaders: QueryDriver
+Diagnostics:
+  Suppress: [pp_expects_filename]
+---
+CompileFlags:
+  Add:
+    - "-std=c++17"
+    - "-DARDUINO=10819"
+    - "-DESP32"
+    - "-Iinclude"
+    - "-DXCHAL_HAVE_LOOPS=1"
+    - "-DXCHAL_NUM_AREGS=64"
+    - "-DXCHAL_HAVE_WINDOWED=1"
+    - "-DMBEDTLS_CONFIG_FILE=<mbedtls/esp_config.h>"
+  Remove:
+    - "-mlongcalls"
+    - "-mdisable-hardware-atomics"
+    - "-fstrict-volatile-bitfields"
+    - "-fno-tree-switch-conversion"
